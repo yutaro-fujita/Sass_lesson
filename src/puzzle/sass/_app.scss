@@ -1,4 +1,4 @@
-@use 'utils' as u;
+@use 'utils';
 
 .wrapper {
   width: 400px;
@@ -11,7 +11,7 @@
   display: flex;
 }
 .header {
-  background-color: u.$navy;
+  background-color: utils.$navy;
   height: 100px;
 
   & > .inner.flex {
@@ -20,7 +20,7 @@
   }
 
   &__box {
-    @include u.headerBtnBox(u.$white, u.$classNames, u.$buttonColor);
+    @include utils.headerBtnBox(utils.$white, utils.$classNames, utils.$buttonColor);
   }
 }
 
@@ -31,19 +31,19 @@
 .sidebar {
   width: 150px;
   height: 100%;
-  background-color: u.$green;
+  background-color: utils.$green;
 }
 
 .main {
   width: 250px;
   height: 100%px;
-  background-color: u.$red;
+  background-color: utils.$red;
 
   &__inner{
     margin: 40px auto auto 40px;
 
     &__box {
-      @include u.mainBtnBox(u.$white, u.$classNames, u.$buttonColor);
+      @include utils.mainBtnBox(utils.$white, utils.$classNames, utils.$buttonColor);
     }
   }
 
@@ -51,5 +51,5 @@
 
 .footer {
   height: 100px;
-  background-color: u.$brown;
+  background-color: utils.$brown;
 }
