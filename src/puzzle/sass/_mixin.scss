@@ -1,0 +1,49 @@
+@mixin headerBtnBox($color, $classNames, $buttonColor) {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: $color;
+
+  &.flex {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__squere {
+    width: 40px;
+    height: 40px;
+
+    @each $cn in $classNames {
+      $index_key: index($classNames, $cn);
+
+      &.#{$cn} {
+        background: nth($buttonColor, $index_key);
+      }
+    }
+  }
+};
+
+@mixin mainBtnBox($color, $classNames, $buttonColor) {
+  width: 150px;
+  height: 50px;
+  padding: 5px;
+  background-color: $color;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__squere {
+    width: 100%;
+    height: 100%;
+
+    @each $cn in $classNames {
+      $index_key: index($classNames, $cn);
+
+      &.#{$cn} {
+        background: nth($buttonColor, $index_key);
+      }
+    }
+  }
+};

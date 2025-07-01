@@ -1,0 +1,55 @@
+@use 'utils';
+
+.wrapper {
+  width: 400px;
+}
+.inner {
+  width: 100%;
+  height: 100%;
+}
+.flex {
+  display: flex;
+}
+.header {
+  background-color: utils.$navy;
+  height: 100px;
+
+  & > .inner.flex {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__box {
+    @include utils.headerBtnBox(utils.$white, utils.$classNames, utils.$buttonColor);
+  }
+}
+
+.main_wrapper {
+  height: 250px;
+}
+
+.sidebar {
+  width: 150px;
+  height: 100%;
+  background-color: utils.$green;
+}
+
+.main {
+  width: 250px;
+  height: 100%px;
+  background-color: utils.$red;
+
+  &__inner{
+    margin: 40px auto auto 40px;
+
+    &__box {
+      @include utils.mainBtnBox(utils.$white, utils.$classNames, utils.$buttonColor);
+    }
+  }
+
+}
+
+.footer {
+  height: 100px;
+  background-color: utils.$brown;
+}
